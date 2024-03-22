@@ -1394,7 +1394,7 @@ else()
 endif()
 
 if (onnxruntime_USE_CUDA)
-  set(CMAKE_CUDA_RUNTIME_LIBRARY Shared)
+  # set(CMAKE_CUDA_RUNTIME_LIBRARY Shared)
   set(CMAKE_CUDA_STANDARD 17)
   if(onnxruntime_CUDNN_HOME)
     file(TO_CMAKE_PATH ${onnxruntime_CUDNN_HOME} onnxruntime_CUDNN_HOME)
