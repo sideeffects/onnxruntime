@@ -263,8 +263,6 @@ TEST(TunableOp, OpWrapsMutableFunctor) {
 
 class VecAddMoveOnlyFunctor {
  public:
-  VecAddMoveOnlyFunctor() {
-  }
   VecAddMoveOnlyFunctor(VecAddMoveOnlyFunctor&&) = default;
   ORT_DISALLOW_COPY_AND_ASSIGNMENT(VecAddMoveOnlyFunctor);
 
@@ -290,8 +288,6 @@ TEST(TunableOp, OpWrapsMoveOnlyFunctor) {
 
 class VecAddWithIsSupportedMethod {
  public:
-  VecAddWithIsSupportedMethod() {
-  }
   VecAddWithIsSupportedMethod(VecAddWithIsSupportedMethod&&) = default;
   ORT_DISALLOW_COPY_AND_ASSIGNMENT(VecAddWithIsSupportedMethod);
 
