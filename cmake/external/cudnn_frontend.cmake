@@ -8,7 +8,8 @@ onnxruntime_fetchcontent_declare(
   URL ${DEP_URL_cudnn_frontend}
   URL_HASH SHA1=${DEP_SHA1_cudnn_frontend}
   PATCH_COMMAND ${Patch_EXECUTABLE} --binary --ignore-whitespace -p1 < ${PROJECT_SOURCE_DIR}/patches/cudnn_frontend/cudnn_frontend_win_dynamic_loading.patch &&
-                ${Patch_EXECUTABLE} --binary --ignore-whitespace -p1 < ${PROJECT_SOURCE_DIR}/patches/cudnn_frontend/cudnn_frontend_win_arm64_compat.patch
+                ${Patch_EXECUTABLE} --binary --ignore-whitespace -p1 < ${PROJECT_SOURCE_DIR}/patches/cudnn_frontend/cudnn_frontend_win_arm64_compat.patch && 
+		${Patch_EXECUTABLE} -p1 < ${PROJECT_SOURCE_DIR}/patches/cudnn_frontend/cudnn_frontend.patch
   EXCLUDE_FROM_ALL
 )
 
