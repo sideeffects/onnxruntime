@@ -6,7 +6,7 @@
 #
 
 set(onnxruntime_MINIMUM_C_STANDARD_VERSION   99)
-set(onnxruntime_MINIMUM_CXX_STANDARD_VERSION 17)
+set(onnxruntime_MINIMUM_CXX_STANDARD_VERSION 20)
 
 #
 # Handle CMAKE_<LANG>_STANDARD variables.
