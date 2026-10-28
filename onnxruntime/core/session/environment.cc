@@ -1043,7 +1043,16 @@ Status Environment::EpInfo::Create(std::unique_ptr<EpLibrary> library_in, std::u
 
   {
     auto factories = instance.library->GetFactories();
+
+#if 1
+    instance.factories.clear();
+
+    for (auto *factory : factories) {
+	instance.factories.push_back(factory);
+    }
+#else
     instance.factories.assign(factories.begin(), factories.end());
+#endif
   }
 
   // OrtHardwareDevice instances to pass to GetSupportedDevices.
