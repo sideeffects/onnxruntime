@@ -234,6 +234,9 @@
       "$<$<COMPILE_LANGUAGE:CXX>:/permissive>"
       "$<$<COMPILE_LANGUAGE:CUDA>:SHELL:-Xcompiler /permissive>"
     )
+
+    target_compile_options(
+	onnxruntime_providers_cuda PRIVATE "/bigobj" "/wd4702")
   endif()
 
   if(WIN32)
