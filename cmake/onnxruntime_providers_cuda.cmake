@@ -236,7 +236,16 @@
     )
 
     target_compile_options(
-	onnxruntime_providers_cuda PRIVATE "/bigobj" "/wd4702")
+	onnxruntime_providers_cuda PRIVATE
+      "$<$<COMPILE_LANGUAGE:CXX>:/bigobj>"
+      "$<$<COMPILE_LANGUAGE:CUDA>:SHELL:-Xcompiler /bigobj>"
+    )
+
+    target_compile_options(
+	onnxruntime_providers_cuda PRIVATE
+      "$<$<COMPILE_LANGUAGE:CXX>:/wd4702>"
+      "$<$<COMPILE_LANGUAGE:CUDA>:SHELL:-Xcompiler /wd4702>"
+    )
   endif()
 
   if(WIN32)
